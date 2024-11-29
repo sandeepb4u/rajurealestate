@@ -19,13 +19,13 @@
     .marquee span {
         display: inline-block;
         position: relative;
-        left: 100%; /* Ensure it starts off-screen */
+        left: -100%; /* Ensure it starts off-screen */
         animation: scroll-right 50s linear infinite;
     }
 
     @keyframes scroll-right {
         0% {
-            transform: translateX(0); /* Start immediately */
+            transform: translateX(-100); /* Start immediately */
         }
         100% {
             transform: translateX(-100%); /* Move off-screen left */
