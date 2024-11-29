@@ -18,17 +18,17 @@
 
 .marquee span {
     display: inline-block;
-    position: relative;
-    left: 100%; /* Start off-screen to the right */
-    animation: scroll-left 20s linear infinite; /* Ensure animation matches keyframes name */
+    position: absolute;
+    left: -100%; /* Start off-screen to the left */
+    animation: scroll-right 20s linear infinite; /* Correct animation direction */
 }
 
-@keyframes scroll-left {
+@keyframes scroll-right {
     0% {
-        transform: translateX(100%); /* Start from the right */
+        transform: translateX(-100%); /* Start off-screen to the left */
     }
     100% {
-        transform: translateX(-100%); /* End off-screen to the left */
+        transform: translateX(100%); /* Move off-screen to the right */
     }
 }
     header {
