@@ -7,32 +7,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
     .marquee {
-        font-size: 16px; /* Increase font size */
-        color: white;
-        background: #1a1a1a;
-        padding: 20px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-        width: 100%; /* Full width */
-    }
+    font-size: 8px;
+    color: white;
+    background: #1a1a1a;
+    padding: 20px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
 
-    .marquee span {
-        display: inline-block;
-        position: absolute;
-        left: 100%; /* Start off-screen to the right */
-        animation: scroll-left 20s linear infinite; /* Ensure smooth scroll */
-    }
+.marquee span {
+    display: inline-block;
+    position: absolute;
+    left: 100%; /* Start off-screen to the right */
+    animation: scroll-left 20s linear infinite; /* Ensures continuous scrolling */
+}
 
-    @keyframes scroll-left {
-        0% {
-            transform: translateX(100%); /* Start off-screen to the right */
-        }
-        100% {
-            transform: translateX(-100%); /* Move off-screen to the left */
-        }
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
     }
-
+    100% {
+        transform: translateX(-100%); /* Move completely off-screen to the left */
+    }
+}
     header {
         position: relative;
         color: white;
@@ -54,9 +53,8 @@
         background-size: cover;
     }
 
-    /* Property Card Styles */
     .property-card {
-        width: 300px;
+        width: 300px; /* Fixed size for consistency */
         margin: 20px auto;
         text-align: center;
         background: #fff;
@@ -90,35 +88,60 @@
         gap: 20px;
         padding: 20px;
     }
-
     header h1 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 60px;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-        margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 60px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
     }
 
     header p {
-        font-size: 20px;
-        margin-top: 10px;
+            font-size: 20px;
+            margin-top: 10px;
     }
+    .enquiry-info {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
 
-    footer {
-        background-color: #1a1a1a;
-        color: white;
-        text-align: center;
-        padding: 30px 20px;
-    }
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            text-align: center;
+        }
 
-    body {
-        font-family: 'Roboto', sans-serif;
-        font-size: 16px;
-        line-height: 1.6;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-    </style>
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+</style>
 </head>
 <body>
 
