@@ -6,69 +6,88 @@
     <title>Raju Real Estate</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
+
         header {
-            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/istockphoto-1893714.jpg') no-repeat center center/cover;
+            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/banner-16.webp') no-repeat center center/cover;
             color: white;
-            padding: 50px 20px;
+            padding: 80px 20px;
             text-align: center;
+            position: relative;
         }
+
         header h1 {
-            font-size: 50px;
-            margin: 0;
-        }
-        header p {
-            font-size: 18px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow for better visibility */
-        }
-        nav {
-            background: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            text-align: center;
+            font-size: 60px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
             margin-bottom: 20px;
         }
-        /* About Us Section */
-        #about {
-            background-color: #f0f8ff;
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
         }
-        /* Testimonials Section */
-        #testimonials {
-            background-color: #fff3e6;
+
+        nav {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
         }
-        /* FAQ Section */
-        #faq {
-            background-color: #e8f5e9;
+
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 15px;
         }
-        /* Advertise with Us Section */
-        #advertise {
-            background-color: #fffbe6;
+
+        nav a:hover {
+            text-decoration: underline;
         }
-        /* Contact Us Section */
-        #contact {
-            background-color: #f0f4f7;
+
+        .section {
+            padding: 60px 20px;
+            margin: 30px 0;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .property-card, .testimonial {
+
+        .property-card {
+            display: inline-block;
+            width: 48%;
+            margin: 1%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .property-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .property-card h3, .property-card p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .testimonial {
             border: 1px solid #ddd;
             margin: 15px;
             padding: 15px;
@@ -77,33 +96,31 @@
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .property-card img, .testimonial img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            object-fit: cover;  /* Prevents overflow */
-            transition: transform 0.3s ease-in-out;
-        }
-        .property-card:hover img, .testimonial:hover img {
-            transform: scale(1.05);
-        }
+
         footer {
-            background: #333;
+            background-color: #1a1a1a;
             color: white;
-            padding: 20px;
             text-align: center;
+            padding: 30px 20px;
         }
+
+        footer p {
+            font-size: 14px;
+        }
+
         .contact-form {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+
         .contact-form input, .contact-form textarea {
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             width: 100%;
         }
+
         .contact-form button {
             background: #333;
             color: white;
@@ -112,49 +129,17 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .contact-form button:hover {
             background: #555;
         }
+
         iframe {
             width: 100%;
             height: 400px;
             border: 0;
         }
-        .faq {
-            margin: 15px 0;
-        }
-        .faq h4 {
-            cursor: pointer;
-        }
-        .faq p {
-            display: none;
-            margin: 5px 0;
-        }
     </style>
-    <script>
-        // Toggle FAQ answers
-        document.addEventListener("DOMContentLoaded", function () {
-            const faqs = document.querySelectorAll(".faq h4");
-            faqs.forEach((faq) => {
-                faq.addEventListener("click", function () {
-                    const answer = this.nextElementSibling;
-                    const isOpen = answer.style.display === "block";
-                    answer.style.display = isOpen ? "none" : "block";
-                });
-            });
-        });
-
-        // Form submission for email sending
-        function sendEmail(event) {
-            event.preventDefault();
-            var name = document.querySelector("input[name='name']").value;
-            var email = document.querySelector("input[name='email']").value;
-            var message = document.querySelector("textarea[name='message']").value;
-            var subject = "New Contact/Advertise Request from " + name;
-            var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
-            window.location.href = "mailto:sandeep.dommari@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        }
-    </script>
 </head>
 <body>
 
@@ -175,16 +160,14 @@
 <section id="properties" class="section">
     <h2>Featured Properties</h2>
     <div class="property-card">
-        <img src="https://sandeepb4u.github.io/rajurealestate/assets/images/istockphoto-1893714.jpg" alt="Luxury Villa">
+        <img src="https://sandeepb4u.github.io/rajurealestate/assets/images/banner-14.webp" alt="Luxury Villa">
         <h3>Luxury Villa in Bangalore</h3>
-        <p>Price: ₹5 Cr</p>
-        <p>Size: 4000 sq. ft.</p>
+        <p>Price: ₹5 Cr | Size: 4000 sq. ft.</p>
     </div>
     <div class="property-card">
-        <img src="https://sandeepb4u.github.io/rajurealestate/assets/images/istockphoto-1893714.jpg" alt="Modern Apartment">
+        <img src="https://sandeepb4u.github.io/rajurealestate/assets/images/banner-15.webp" alt="Modern Apartment">
         <h3>Modern Apartment in Mumbai</h3>
-        <p>Price: ₹1 Cr</p>
-        <p>Size: 1500 sq. ft.</p>
+        <p>Price: ₹1 Cr | Size: 1500 sq. ft.</p>
     </div>
 </section>
 
@@ -199,7 +182,7 @@
 
 <section id="testimonials" class="section">
     <h2>What Our Clients Say</h2>
-        <div class="testimonial">
+    <div class="testimonial">
         <p>"Raju Real Estate helped us find our dream home in no time. Excellent service!"</p>
         <h4>- Rahul, Bangalore</h4>
     </div>
@@ -208,36 +191,36 @@
         <h4>- Priya, Mumbai</h4>
     </div>
     <div class="testimonial">
-        <p>"Great experience with Raju Real Estate. Very trustworthy!"</p>
-        <h4>- Amit, Delhi</h4>
+        <p>"The team was very helpful throughout the process. Great experience!"</p>
+        <h4>- Arvind, Hyderabad</h4>
     </div>
     <div class="testimonial">
-        <p>"They guided us throughout the buying process and helped us find the perfect property!"</p>
-        <h4>- Sandeep, Hyderabad</h4>
+        <p>"Amazing service! They guided us with great options for our new home!"</p>
+        <h4>- Anjali, Delhi</h4>
     </div>
     <div class="testimonial">
-        <p>"Excellent customer service and great properties. Thanks Raju Real Estate!"</p>
-        <h4>- Priyanka, Chennai</h4>
+        <p>"Excellent service and very knowledgeable staff. Highly recommended!"</p>
+        <h4>- Rajesh, Chennai</h4>
     </div>
     <div class="testimonial">
-        <p>"Raju Real Estate made the entire buying process so easy and seamless!"</p>
-        <h4>- Arvind, Pune</h4>
+        <p>"Very professional and efficient. Helped us find exactly what we needed!"</p>
+        <h4>- Simran, Pune</h4>
     </div>
     <div class="testimonial">
-        <p>"Very professional service, and they have a great selection of properties!"</p>
-        <h4>- Tanvi, Jaipur</h4>
+        <p>"The experience was great! We found the perfect apartment in no time."</p>
+        <h4>- Deepak, Kolkata</h4>
     </div>
     <div class="testimonial">
-        <p>"I would highly recommend Raju Real Estate for anyone looking to buy a home in India!"</p>
-        <h4>- Vikram, Kolkata</h4>
+        <p>"Raju Real Estate provides excellent support in all steps of property buying!"</p>
+        <h4>- Meera, Ahmedabad</h4>
     </div>
     <div class="testimonial">
-        <p>"The team at Raju Real Estate helped us every step of the way. Wonderful service!"</p>
-        <h4>- Shruti, Bangalore</h4>
+        <p>"Great services and very professional team. Very happy with my new apartment!"</p>
+        <h4>- Harsh, Jaipur</h4>
     </div>
     <div class="testimonial">
-        <p>"Their guidance and insights made the whole experience stress-free. Excellent!"</p>
-        <h4>- Rajesh, Delhi</h4>
+        <p>"They made the entire buying process easy and seamless. Thank you for your help!"</p>
+        <h4>- Neha, Surat</h4>
     </div>
 </section>
 
@@ -249,15 +232,7 @@
     </div>
     <div class="faq">
         <h4>How can I contact your team?</h4>
-        <p>You can reach us via email at contact@rajurealestate.com or call +91 987-654-3210.</p>
-    </div>
-    <div class="faq">
-        <h4>What areas do you cover?</h4>
-        <p>We cover all major cities and towns across India, including Bangalore, Mumbai, Delhi, Pune, Chennai, and more.</p>
-    </div>
-    <div class="faq">
-        <h4>Can I list my property with you?</h4>
-        <p>Yes, we offer property listing services for real estate agents and individuals. Contact us for more details.</p>
+        <p>You can reach us via email at contact@rajurealestate.com or call +91 987-654-3210</p>
     </div>
 </section>
 
@@ -274,20 +249,9 @@
 
 <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <form class="contact-form" onsubmit="sendEmail(event)">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-</section>
-
-<section id="map" class="section">
-    <h2>Find Us</h2>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381441.82236804535!2d78.47465502553177!3d17.385044022257145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb935a!2sHyderabad!5e0!3m2!1sen!2sin!4v1693517017280!5m2!1sen!2sin"
-        allowfullscreen>
-    </iframe>
+    <p>Visit us at our office or contact us for any inquiries:</p>
+    <p><strong>Address:</strong> Raju Real Estate, New Delhi, India</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19910.43947327119!2d77.08507356803912!3d28.645988067745768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce42d1d59bf29%3A0x6fcb7a8b3812f2bb!2sRaju%20Real%20Estate!5e0!3m2!1sen!2sin!4v1684394743434" allowfullscreen=""></iframe>
 </section>
 
 <footer>
