@@ -7,31 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
     .marquee {
-        font-size: 20px;
-        color: white;
-        background: #1a1a1a;
-        padding: 10px 0;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-    }
+    font-size: 20px;
+    color: white;
+    background: #1a1a1a;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
 
-    .marquee span {
-        display: inline-block;
-        position: relative;
-        left: 0%; /* Ensure it starts off-screen */
-        animation: scroll-right 50s linear infinite;
-    }
+.marquee span {
+    display: inline-block;
+    position: relative;
+    left: 100%; /* Start off-screen to the right */
+    animation: scroll-left 20s linear infinite; /* Ensure animation matches keyframes name */
+}
 
-    @keyframes scroll-left {
-        0% {
-            transform: translateX(0); /* Start immediately */
-        }
-        100% {
-            transform: translateX(-100%); /* Move off-screen left */
-        }
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Start from the right */
     }
-
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
     header {
         position: relative;
         color: white;
