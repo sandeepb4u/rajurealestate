@@ -23,6 +23,7 @@
         }
         header p {
             font-size: 18px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow for better visibility */
         }
         nav {
             background: #333;
@@ -139,6 +140,17 @@
                 });
             });
         });
+
+        // Form submission for email sending
+        function sendEmail(event) {
+            event.preventDefault();
+            var name = document.querySelector("input[name='name']").value;
+            var email = document.querySelector("input[name='email']").value;
+            var message = document.querySelector("textarea[name='message']").value;
+            var subject = "New Contact/Advertise Request from " + name;
+            var body = "Name: " + name + "\nEmail: " + email + "\nMessage: " + message;
+            window.location.href = "mailto:sandeep.dommari@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        }
     </script>
 </head>
 <body>
@@ -176,9 +188,10 @@
 <section id="about" class="section">
     <h2>About Us</h2>
     <p>
-        At Raju Real Estate, we pride ourselves on offering top-notch real estate services tailored to meet your needs.
-        From luxury villas to affordable apartments, our mission is to help you find the perfect property.
+        At Raju Real Estate, we pride ourselves on offering top-notch real estate services tailored to meet your needs. We specialize in providing a wide range of properties from luxury villas to affordable apartments. Our dedicated team is here to assist you at every step, ensuring a seamless buying, selling, and renting experience.
     </p>
+    <p><strong>Proprietary Name:</strong> Mr. Radhakrishnama Raju</p>
+    <p><strong>Phone Numbers:</strong> +91 891-962-4297, +91 988-522-5183</p>
 </section>
 
 <section id="testimonials" class="section">
@@ -201,14 +214,14 @@
     </div>
     <div class="faq">
         <h4>How can I contact your team?</h4>
-        <p>You can reach us via email at contact@rajurealestate.com or call +91-9876543210.</p>
+        <p>You can reach us via email at contact@rajurealestate.com or call +91 987-654-3210.</p>
     </div>
 </section>
 
 <section id="advertise" class="section">
     <h2>Advertise with Us</h2>
-    <p>Are you a real estate agent or business looking to advertise? Reach a large audience and get your property listings visible on our platform.</p>
-    <form class="contact-form">
+    <p>Are you a real estate agent or business looking to advertise? Reach a large audience and get your property listings visible on our platform. Submit your details below and we will get back to you shortly.</p>
+    <form class="contact-form" onsubmit="sendEmail(event)">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -218,7 +231,7 @@
 
 <section id="contact" class="section">
     <h2>Contact Us</h2>
-    <form class="contact-form">
+    <form class="contact-form" onsubmit="sendEmail(event)">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
@@ -233,3 +246,10 @@
         allowfullscreen>
     </iframe>
 </section>
+
+<footer>
+    <p>&copy; 2024 Raju Real Estate. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
