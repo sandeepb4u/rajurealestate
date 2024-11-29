@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
     .marquee {
-        font-size: 16px;
+        font-size: 20px;
         color: white;
         background: #1a1a1a;
-        padding: 10px 0;
+        padding: 15px 0;
         overflow: hidden;
         white-space: nowrap;
         position: relative;
@@ -18,16 +18,17 @@
 
     .marquee span {
         display: inline-block;
-        padding-right: 100%;
+        position: relative;
+        left: 100%; /* Ensure it starts off-screen */
         animation: scroll-right 5s linear infinite;
     }
 
     @keyframes scroll-right {
         0% {
-            transform: translateX(-100%);
+            transform: translateX(0); /* Start immediately */
         }
         100% {
-            transform: translateX(100%);
+            transform: translateX(-100%); /* Move off-screen left */
         }
     }
 
