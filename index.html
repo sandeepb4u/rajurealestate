@@ -35,11 +35,12 @@
         header::after {
             content: "";
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 0;
+            right: 0;
             width: 120px;
             height: 120px;
-            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/radhakrish.png') no-repeat center center/cover;
+            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/radhakrish.png') no-repeat top right;
+            background-size: contain;
         }
 
         /* Scrolling Information */
@@ -55,8 +56,7 @@
         }
 
         .scrolling-info span {
-            display: inline-block;
-            padding-right: 100%;
+            display: inline; /* Removed block-level display */
             animation: scroll-text 50s linear infinite;
         }
 
