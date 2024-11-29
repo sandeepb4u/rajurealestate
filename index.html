@@ -14,7 +14,6 @@
         }
 
         header {
-            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/banner-16.webp') no-repeat center center/cover;
             color: white;
             padding: 100px 20px;
             text-align: center;
@@ -43,30 +42,12 @@
             background-size: contain;
         }
 
-        /* Scrolling Information */
-        .scrolling-info {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            position: relative;
-            width: 100%;
+        /* Enquiry Info */
+        .enquiry-info {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
             margin-top: 10px;
-        }
-
-        .scrolling-info span {
-            display: inline; /* Removed block-level display */
-            animation: scroll-text 50s linear infinite;
-        }
-
-        @keyframes scroll-text {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
         }
 
         nav {
@@ -97,43 +78,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .property-card {
-            display: inline-block;
-            width: 48%;
-            margin: 1%;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .property-card img {
-            width: 100%;
-            height: 500px; /* Made the images bigger */
-            object-fit: cover;
-            border-radius: 8px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .property-card:hover img {
-            transform: scale(1.05);
-        }
-
-        .property-card h3, .property-card p {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .testimonial {
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
         footer {
             background-color: #1a1a1a;
             color: white;
@@ -144,53 +88,17 @@
         footer p {
             font-size: 14px;
         }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        .contact-form button {
-            background: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact-form button:hover {
-            background: #555;
-        }
-
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: 0;
-        }
-
-        .logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 100px;
-        }
     </style>
 </head>
 <body>
 
-<header>
+<header id="main-header">
     <h1>Welcome to Raju Real Estate</h1>
     <p>Your trusted partner for buying, selling, and renting properties</p>
-    <div class="scrolling-info">
-        <span>For enquiries reach out to our team via email at contact@rajurealestate.com or call +91 891-962-4297 / +91 988-522-5183</span>
+    <div class="enquiry-info">
+        For enquiries reach out to our team via email at 
+        <a href="mailto:contact@rajurealestate.com">contact@rajurealestate.com</a> 
+        or call +91 891-962-4297 / +91 988-522-5183
     </div>
 </header>
 
@@ -302,6 +210,21 @@
 <footer>
     <p>&copy; 2024 Raju Real Estate. All rights reserved.</p>
 </footer>
+
+<script>
+    // Preload header images
+    const headerImages = [
+        'https://sandeepb4u.github.io/rajurealestate/assets/images/banner-16.webp',
+        'https://sandeepb4u.github.io/rajurealestate/assets/images/banner-14.webp',
+        'https://sandeepb4u.github.io/rajurealestate/assets/images/banner-15.webp'
+    ];
+
+    // Select a random image
+    const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
+
+    // Apply the random image to the header background
+    document.getElementById('main-header').style.background = `url('${randomImage}') no-repeat center center/cover`;
+</script>
 
 </body>
 </html>
