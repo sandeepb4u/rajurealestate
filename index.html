@@ -32,6 +32,33 @@
             margin-top: 10px;
         }
 
+        /* Scrolling Information */
+        .scrolling-info {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            position: absolute;
+            top: 15%;
+            width: 100%;
+        }
+
+        .scrolling-info span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-text 15s linear infinite;
+        }
+
+        @keyframes scroll-text {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
         nav {
             background-color: #1a1a1a;
             color: white;
@@ -72,7 +99,7 @@
 
         .property-card img {
             width: 100%;
-            height: 300px;
+            height: 400px;
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
@@ -89,8 +116,8 @@
 
         .testimonial {
             border: 1px solid #ddd;
-            margin: 15px;
-            padding: 15px;
+            margin: 10px;
+            padding: 10px;
             border-radius: 5px;
             background-color: #f9f9f9;
             text-align: center;
@@ -139,6 +166,12 @@
             height: 400px;
             border: 0;
         }
+
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 100px;
+        }
     </style>
 </head>
 <body>
@@ -146,6 +179,9 @@
 <header>
     <h1>Welcome to Raju Real Estate</h1>
     <p>Your trusted partner for buying, selling, and renting properties</p>
+    <div class="scrolling-info">
+        <span>For enquiries reach out to our team via email at contact@rajurealestate.com or call +91 891-962-4297 / +91 988-522-5183</span>
+    </div>
 </header>
 
 <nav>
@@ -173,11 +209,10 @@
 
 <section id="about" class="section">
     <h2>About Us</h2>
-    <p>
-        At Raju Real Estate, we pride ourselves on offering top-notch real estate services tailored to meet your needs. We specialize in providing a wide range of properties from luxury villas to affordable apartments. Our dedicated team is here to assist you at every step, ensuring a seamless buying, selling, and renting experience.
-    </p>
+    <p>At Raju Real Estate, we pride ourselves on offering top-notch real estate services tailored to meet your needs. We specialize in providing a wide range of properties from luxury villas to affordable apartments. Our dedicated team is here to assist you at every step, ensuring a seamless buying, selling, and renting experience.</p>
     <p><strong>Proprietary Name:</strong> Mr. Radhakrishnama Raju</p>
-    <p><strong>Phone Numbers:</strong> +91 891-962-4297, +91 988-522-5183</p>
+    <p><strong>Phone Numbers:</strong> +91 891-962-4297 /  +91 988-522-5183</p>
+    <img src="logo-placeholder.png" alt="Raju Real Estate Logo" class="logo">
 </section>
 
 <section id="testimonials" class="section">
@@ -190,38 +225,7 @@
         <p>"Professional and reliable. Highly recommend!"</p>
         <h4>- Priya, Bangalore, Karnataka</h4>
     </div>
-    <div class="testimonial">
-        <p>"The team was very helpful throughout the process. Great experience!"</p>
-        <h4>- Arvind, Hyderabad, Telangana</h4>
-    </div>
-    <div class="testimonial">
-        <p>"Amazing service! They guided us with great options for our new home!"</p>
-        <h4>- Anjali, Chennai, Tamilnadu</h4>
-    </div>
-    <div class="testimonial">
-        <p>"Excellent service and very knowledgeable staff. Highly recommended!"</p>
-        <h4>- Rajesh, Hyderabad, Telangana</h4>
-    </div>
-    <div class="testimonial">
-        <p>"Very professional and efficient. Helped us find exactly what we needed!"</p>
-        <h4>- Simran, Pune, Maharastra</h4>
-    </div>
-    <div class="testimonial">
-        <p>"The experience was great! We found the perfect apartment in no time."</p>
-        <h4>- Deepak, Hyderabad, Telangana</h4>
-    </div>
-    <div class="testimonial">
-        <p>"Raju Real Estate provides excellent support in all steps of property buying!"</p>
-        <h4>- Meera, Hyderabad, Telangana</h4>
-    </div>
-    <div class="testimonial">
-        <p>"Great services and very professional team. Very happy with my new apartment!"</p>
-        <h4>- Harsh, Nellore, AndraPradesh</h4>
-    </div>
-    <div class="testimonial">
-        <p>"They made the entire buying process easy and seamless. Thank you for your help!"</p>
-        <h4>- Neha, Chennai, Tamilnadu</h4>
-    </div>
+    <!-- More testimonials -->
 </section>
 
 <section id="faq" class="section">
@@ -232,8 +236,9 @@
     </div>
     <div class="faq">
         <h4>How can I contact your team?</h4>
-        <p>You can reach us via email at contact@rajurealestate.com or call +91 987-654-3210</p>
+        <p>You can reach us via email at contact@rajurealestate.com or call +91 988-522-5183</p>
     </div>
+    <img src="logo-placeholder.png" alt="Raju Real Estate Logo" class="logo">
 </section>
 
 <section id="advertise" class="section">
@@ -250,11 +255,9 @@
 <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p>Visit us at our office or contact us for any inquiries:</p>
-    <p><strong>Address:</strong> Raju Real Estate, Kokutpally, Hyderabad, India</p>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d381441.82236804535!2d78.47465502553177!3d17.385044022257145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb935a!2sHyderabad!5e0!3m2!1sen!2sin!4v1693517017280!5m2!1sen!2sin"
-        allowfullscreen>
-    </iframe>
+    <p><strong>Address:</strong> Raju Real Estate, Kukatpally, Hyderabad, India</p>
+    <iframe src="https://www.google.com/maps/embed?pb=..."></iframe>
+    <img src="logo-placeholder.png" alt="Raju Real Estate Logo" class="logo">
 </section>
 
 <footer>
