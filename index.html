@@ -6,32 +6,34 @@
     <title>Raju Real Estate</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
+    /* General styles for all devices */
     .marquee {
-    font-size: 8px;
-    color: white;
-    background: #1a1a1a;
-    padding: 20px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
-}
-
-.marquee span {
-    display: inline-block;
-    position: absolute;
-    left: 100%; /* Start off-screen to the right */
-    animation: scroll-left 20s linear infinite; /* Ensures continuous scrolling */
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%); /* Start off-screen to the right */
+        font-size: 8px;
+        color: white;
+        background: #1a1a1a;
+        padding: 20px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
     }
-    100% {
-        transform: translateX(-100%); /* Move completely off-screen to the left */
+
+    .marquee span {
+        display: inline-block;
+        position: absolute;
+        left: 100%;
+        animation: scroll-left 20s linear infinite;
     }
-}
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
     header {
         position: relative;
         color: white;
@@ -47,14 +49,14 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 200px; /* Increased size */
-        height: 200px; /* Increased size */
+        width: 200px;
+        height: 200px;
         background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/radhakrish1.jpeg') no-repeat top right;
         background-size: cover;
     }
 
     .property-card {
-        width: 300px; /* Fixed size for consistency */
+        width: 300px;
         margin: 20px auto;
         text-align: center;
         background: #fff;
@@ -88,59 +90,139 @@
         gap: 20px;
         padding: 20px;
     }
+
     header h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 60px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 60px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
     }
 
     header p {
-            font-size: 20px;
-            margin-top: 10px;
+        font-size: 20px;
+        margin-top: 10px;
     }
+
     .enquiry-info {
-            font-size: 16px;
-            margin-top: 20px;
-        }
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
     img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    nav {
+        background-color: #1a1a1a;
+        padding: 15px 0;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        margin: 0 15px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Media Queries for different screen sizes */
+
+    /* For devices with a screen width of 768px or less (tablets and mobiles) */
+    @media (max-width: 768px) {
+        header {
+            padding: 60px 20px;
         }
 
-        nav {
-            background-color: #1a1a1a;
-            padding: 15px 0;
-            text-align: center;
+        header h1 {
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 16px;
+        }
+
+        .property-card {
+            width: 100%; /* Make property cards take up the full width on smaller screens */
+        }
+
+        .marquee span {
+            font-size: 12px; /* Larger font size for marquee on mobile */
         }
 
         nav a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            margin: 0 15px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
+            font-size: 16px;
+            margin: 0 10px;
         }
 
         footer {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 20px 10px;
         }
-        body {
-            font-family: 'Roboto', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+
+        #properties {
+            padding: 10px;
         }
+
+        .testimonial, .faq {
+            margin-bottom: 10px;
+        }
+    }
+
+    /* For devices with a screen width of 480px or less (small mobiles) */
+    @media (max-width: 480px) {
+        header {
+            padding: 40px 10px;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            font-size: 14px;
+        }
+
+        .property-card {
+            width: 100%;
+        }
+
+        nav a {
+            font-size: 14px;
+            margin: 0 5px;
+        }
+
+        footer {
+            padding: 20px 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -292,12 +374,13 @@
 
     let currentImageIndex = 0;
     const headerElement = document.getElementById('main-header');
-
-    function cycleHeaderImages() {
-        currentImageIndex = (currentImageIndex + 1) % headerImages.length;
+    
+    function changeHeaderImage() {
         headerElement.style.backgroundImage = `url('${headerImages[currentImageIndex]}')`;
+        currentImageIndex = (currentImageIndex + 1) % headerImages.length;
     }
-    setInterval(cycleHeaderImages, 3000); // Change image every 5 seconds
+
+    setInterval(changeHeaderImage, 3000);
 </script>
 
 </body>
