@@ -11,16 +11,28 @@
             font-size: 16px;
             line-height: 1.6;
             background-color: #f4f4f4;
-            color: #333;
             margin: 0;
             padding: 0;
         }
 
         header {
+            position: relative;
             color: white;
             padding: 100px 20px;
             text-align: center;
-            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/rajurealestate17.jpg') no-repeat center center/cover;
+            background: no-repeat center center/cover;
+            transition: background-image 1s ease-in-out;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: url('https://sandeepb4u.github.io/rajurealestate/assets/images/radhakrish1.jpeg') no-repeat top right;
+            background-size: contain;
         }
 
         header h1 {
@@ -37,8 +49,37 @@
 
         .enquiry-info {
             font-size: 16px;
-            color: #fff;
             margin-top: 20px;
+        }
+
+        .marquee {
+            font-size: 16px;
+            color: white;
+            background: #1a1a1a;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
         }
 
         nav {
@@ -59,80 +100,11 @@
             text-decoration: underline;
         }
 
-        .section {
-            padding: 80px 20px;
-            margin: 30px 0;
-            max-width: 1200px;
-            margin: 30px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #1a1a1a;
-        }
-
-        p, li {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .testimonial {
-            margin: 20px 0;
-            padding: 20px;
-            background: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-
-        .testimonial h4 {
-            text-align: right;
-            font-size: 1.125rem;
-            font-weight: bold;
-            margin-top: 10px;
-            color: #555;
-        }
-
-        .contact-form input, .contact-form textarea, .contact-form button {
-            width: 100%;
-            margin: 10px 0;
-            padding: 15px;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        .contact-form button {
-            background: #1a1a1a;
-            color: #fff;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .contact-form button:hover {
-            background: #333;
-        }
-
         footer {
             background-color: #1a1a1a;
             color: white;
             text-align: center;
             padding: 30px 20px;
-        }
-
-        footer p {
-            font-size: 14px;
         }
     </style>
 </head>
@@ -141,12 +113,11 @@
 <header id="main-header">
     <h1>Welcome to Raju Real Estate</h1>
     <p>Your trusted partner for buying, selling, and renting properties</p>
-    <div class="enquiry-info">
-        For enquiries reach out to our team via email at 
-        <a href="mailto:contact@rajurealestate.com">contact@rajurealestate.com</a> 
-        or call +91 891-962-4297 / +91 988-522-5183
-    </div>
 </header>
+
+<div class="marquee">
+    <span>For enquiries reach out to our team via email at contact@rajurealestate.com or call +91 891-962-4297 / +91 988-522-5183</span>
+</div>
 
 <nav>
     <a href="#properties">Properties</a>
@@ -258,7 +229,6 @@
 </footer>
     
 <script>
-    // Preload header images
     const headerImages = [
         'https://sandeepb4u.github.io/rajurealestate/assets/images/rajurealestate41.jpg',
         'https://sandeepb4u.github.io/rajurealestate/assets/images/rajurealestate42.jpg',
@@ -275,11 +245,14 @@
         'https://sandeepb4u.github.io/rajurealestate/assets/images/rajurealestate40.jpg'
     ];
 
-    // Select a random image
-    const randomImage = headerImages[Math.floor(Math.random() * headerImages.length)];
+    let currentImageIndex = 0;
+    const headerElement = document.getElementById('main-header');
 
-    // Apply the random image to the header background
-    document.getElementById('main-header').style.background = `url('${randomImage}') no-repeat center center/cover`;
+    function cycleHeaderImages() {
+        currentImageIndex = (currentImageIndex + 1) % headerImages.length;
+        headerElement.style.backgroundImage = `url('${headerImages[currentImageIndex]}')`;
+    }
+    setInterval(cycleHeaderImages, 3000); // Change image every 5 seconds
 </script>
 
 </body>
